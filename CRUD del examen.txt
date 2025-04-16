@@ -1,0 +1,57 @@
+INSERTAR
+
+
+        GestorJPA gestor = new GestorJPA();
+        Atencion_veterinaria atencion_veterinaria = new Atencion_veterinaria();
+        Tipo_servicio tipo_servicio = new Tipo_servicio();
+        
+        
+        tipo_servicio.setNom_tipo_servicio("Consulta general 3");
+        tipo_servicio.setPrecio(150.20);
+        gestor.crearTipo(tipo_servicio);
+
+        
+        atencion_veterinaria.setFecha(new Date());
+        atencion_veterinaria.setTipo_servicio(tipo_servicio);
+        atencion_veterinaria.setNom_mascota("Jhonatan");
+        atencion_veterinaria.setNom_propietario("Jhamp");
+        gestor.crearAtencion(atencion_veterinaria);
+
+
+UPDATE
+
+
+        GestorJPA gestor = new GestorJPA();
+        Atencion_veterinaria atencion_veterinaria = new Atencion_veterinaria();
+        Tipo_servicio tipo_servicio = new Tipo_servicio();
+
+
+        tipo_servicio.setNom_tipo_servicio("Consulta general 3");
+        tipo_servicio.setPrecio(150.20);
+        gestor.crearTipo(tipo_servicio);
+
+        atencion_veterinaria.setNum_atencion(102);
+        atencion_veterinaria.setFecha(new Date());
+        atencion_veterinaria.setTipo_servicio(tipo_servicio);
+        atencion_veterinaria.setNom_mascota("Jhonatan");
+        atencion_veterinaria.setNom_propietario("Maria");
+        gestor.updateAtencion(atencion_veterinaria);
+
+
+DELETE
+
+
+        GestorJPA gestor = new GestorJPA();
+        gestor.deleteAtencion(102);
+
+
+CONSULTAR
+
+
+        GestorJPA gestor = new GestorJPA();
+        Atencion_veterinaria atencion_veterinaria = new Atencion_veterinaria();
+        Tipo_servicio tipo_servicio = new Tipo_servicio();
+
+        Atencion_veterinaria consulta ;
+        consulta = gestor.buscarAtencion(152);
+        System.out.println(consulta.getNom_propietario());
